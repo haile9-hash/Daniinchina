@@ -1,0 +1,325 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  z-index: 1002;
+}
+
+/* Right side layout */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 1002;
+}
+
+/* Social icons with correct brand colors */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Instagram - Gradient colors */
+.social-icons .instagram {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  color: white;
+}
+
+.social-icons .instagram:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+}
+
+/* WhatsApp - Green */
+.social-icons .whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.social-icons .whatsapp:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* X/Twitter - Black */
+.social-icons .x-twitter {
+  background: #000000;
+  color: white;
+}
+
+.social-icons .x-twitter:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Telegram - Blue */
+.social-icons .telegram {
+  background: #0088CC;
+  color: white;
+}
+
+.social-icons .telegram:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+}
+
+/* Language switcher */
+.language-switcher {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.language-switcher:hover {
+  background: #333;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Hamburger with 3 equal lines */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger to X transformation */
+.hamburger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: white;
+}
+
+.hamburger.active .line2 {
+  opacity: 0;
+}
+
+.hamburger.active .line3 {
+  transform: rotate(-45deg) translate(7px, -6px);
+  background: white;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Full page menu that covers entire screen */
+.fullpage-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1001;
+}
+
+.fullpage-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Close X button */
+.close-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1003;
+}
+
+.close-icon:hover {
+  transform: scale(1.2);
+  color: #ccc;
+}
+
+/* Navigation links - Big and visible */
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.menu-link:hover {
+  color: #fff;
+  transform: translateX(10px);
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Social media icons in menu with correct colors */
+.menu-social-icons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-social-icons a {
+  font-size: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.8rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu social icons colors */
+.menu-social-icons .instagram {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  color: white;
+}
+
+.menu-social-icons .whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.menu-social-icons .x-twitter {
+  background: #000000;
+  color: white;
+}
+
+.menu-social-icons .telegram {
+  background: #0088CC;
+  color: white;
+}
+
+.menu-social-icons a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .navbar-right {
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+  
+  .menu-link {
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .menu-social-icons a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.7rem;
+  }
+  
+  .close-icon {
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Hide social icons on very small screens */
+@media (max-width: 480px) {
+  .social-icons {
+    display: none;
+  }
+  
+  .navbar-right {
+    gap: 0.5rem;
+  }
+  
+  .menu-link {
+    font-size: 1.7rem;
+  }
+}

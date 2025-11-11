@@ -1,0 +1,458 @@
+/* Contact Form Styles */
+.contact-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  text-align: center;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.send-button {
+  grid-column: 1 / -1;
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.send-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Success Message */
+.success-message {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: #48bb78;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 50;
+}
+
+.success-message.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.75rem;
+  }
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info>p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-method:hover {
+  transform: translateX(10px);
+}
+
+.method-icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #ff4b4b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-method h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-method a,
+.contact-method p {
+  color: #666;
+  text-decoration: none;
+  margin: 0;
+}
+
+.contact-method a:hover {
+  color: #ff4b4b;
+}
+
+.contact-form-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff4b4b;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn-primary {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.social-links {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  margin: 0 -20px;
+}
+
+.social-links h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  padding: 12px 24px;
+  background: #ff4b4b;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 60px 20px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-form-container {
+    padding: 2rem;
+  }
+
+  .contact-method {
+    padding: 1rem;
+  }
+
+  .method-icon {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icons {
+    gap: 1rem;
+  }
+
+  .social-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Import Google Font - Dancing Script */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Global App Container (Used by the App component) */
+.app-container {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Contact Form Container (Used by the ContactForm component) */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Unique Title Style */
+.font-script {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+}
+
+.contact-title {
+  font-family: 'Dancing Script', cursive;
+  color: #1f2937;
+  margin-bottom: 3rem;
+  /* Responsive sizing */
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+/* Form Card/Panel */
+.form-card {
+  background-color: #ffffff;
+  padding: 2rem 4rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Custom Form Group - for label and input */
+.form-group-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.label-custom {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.input-custom {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  background: transparent;
+  padding: 0.5rem 0;
+  font-size: 1.15rem;
+  color: #1f2937;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-custom::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Enhanced focus effect: Dark border and subtle shadow */
+.input-custom:focus {
+  border-bottom-color: #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* Send Button */
+.send-button {
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:not(:disabled) {
+  background-color: #dc2626;
+  /* Red */
+}
+
+.send-button:not(:disabled):hover {
+  background-color: #b91c1c;
+}
+
+.send-button:disabled {
+  background-color: #9ca3af;
+  /* Gray */
+  cursor: not-allowed;
+}
+
+/* Success Message styles (Fixed position notification) */
+.success-message {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  background-color: #10b981;
+  /* Green */
+  color: #ffffff;
+  opacity: 1;
+  transform: translateY(0);
+  /* Transition includes visibility change to prevent interaction when hidden */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0s 0.5s;
+}
+
+.success-message.hidden-message {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}

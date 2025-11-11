@@ -1,0 +1,109 @@
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 80px; /* Space for fixed navbar */
+  min-height: calc(100vh - 80px); /* Full height minus navbar */
+  display: flex;
+  align-items: center;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-text {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.7;
+  font-weight: 500;
+  margin: 0;
+}
+
+.journey-content h2 {
+  color: #333;
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.journey-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  height: 400px; /* Reduced height to fit below navbar */
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Chinese font styling */
+.about-page:lang(zh) {
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-page {
+    margin-top: 70px;
+    padding: 1.5rem;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .image-container {
+    height: 300px;
+    order: -1; /* Image comes first on mobile */
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 1rem;
+    margin-top: 60px;
+  }
+  
+  .image-container {
+    height: 250px;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+  }
+  
+  .about-section {
+    gap: 2rem;
+  }
+}
