@@ -151,15 +151,11 @@
 }
 
 /* Platform-specific hover colors */
-.social-icon.youtube:hover {
+.social-icon.youtube{
   color: #ff0000;
 }
 
-.social-icon.instagram:hover {
-  color: #e1306c;
-}
-
-.social-icon.email:hover {
+.social-icon.facebook{
   color: #0078d4;
 }
 

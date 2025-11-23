@@ -75,7 +75,7 @@ export default function Navbar() {
       <div className="navbar-right">
         {/* Social icons */}
         <div className="social-icons">
-          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
+          <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
             <i className="fab fa-instagram"></i>
           </a>
           <a href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="whatsapp">
@@ -84,7 +84,7 @@ export default function Navbar() {
           <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="x-twitter">
             <i className="fab fa-x-twitter"></i>
           </a>
-          <a href="https://t.me/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="telegram">
+          <a href="https://t.me/Daniy3l" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="telegram">
             <i className="fab fa-telegram"></i>
           </a>
         </div>
@@ -119,7 +119,7 @@ export default function Navbar() {
 
         {/* Social icons inside menu */}
         <div className="menu-social-icons">
-          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
+          <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
             <i className="fab fa-instagram"></i>
           </a>
           <a href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="whatsapp">
@@ -128,7 +128,7 @@ export default function Navbar() {
           <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="x-twitter">
             <i className="fab fa-x-twitter"></i>
           </a>
-          <a href="https://t.me/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="telegram">
+          <a href="https://t.me/Daniy3l" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="telegram">
             <i className="fab fa-telegram"></i>
           </a>
         </div>

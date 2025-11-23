@@ -190,7 +190,7 @@ function ContactForm() {
         <h3>{content[language].socialTitle}</h3>
         <div className="social-icons">
           <a
-            href="https://youtube.com/@daniinchina"
+            href="https://www.youtube.com/@Daniinchina"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon youtube"
@@ -199,7 +199,7 @@ function ContactForm() {
             <i className="fab fa-youtube"></i>
           </a>
           <a
-            href="https://instagram.com/daniinchina"
+            href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA=="
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon instagram"
@@ -207,13 +207,15 @@ function ContactForm() {
           >
             <i className="fab fa-instagram"></i>
           </a>
-          <a
-            href="mailto:dani@example.com"
-            className="social-icon email"
-            aria-label="Email"
-          >
-            <i className="fas fa-envelope"></i>
-          </a>
+        <a
+      href="https://web.facebook.com/Daniinchina1?__tn__=-UC"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-icon facebook"
+      aria-label="Facebook"
+    >
+      <i className="fab fa-facebook"></i>
+    </a>
         </div>
       </div>
     </div>
