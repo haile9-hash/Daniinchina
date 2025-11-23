@@ -73,8 +73,8 @@ export default function Navbar() {
 
       {/* Right side: Social icons, Language, Hamburger */}
       <div className="navbar-right">
-        {/* Social icons */}
-        <div className="social-icons">
+        {/* Social icons - Hidden on mobile */}
+        <div className="social-icons desktop-only">
           <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
             <i className="fab fa-instagram"></i>
           </a>
@@ -89,13 +89,13 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Language switcher */}
+        {/* Language switcher - Improved visibility */}
         <div className="language-switcher" onClick={toggleLanguage}>
           <span className="language-icon">{language}</span>
         </div>
 
-        {/* Hamburger / X toggle */}
-        <div className="hamburger" onClick={toggleMenu}>
+        {/* Hamburger / X toggle - Improved visibility */}
+        <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
           {isOpen ? (
             <span className="close-x">×</span>
           ) : (

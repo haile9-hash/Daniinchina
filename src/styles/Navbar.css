@@ -24,14 +24,13 @@
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease; /* Added transition for smooth color change */
+  transition: all 0.3s ease;
 }
 
-/* Logo hover effect - change to red */
 .logo:hover {
-  color: #ff6b6b; /* Red color on hover */
-  transform: scale(1.05); /* Slight scale effect */
-  text-shadow: 0 2px 8px rgba(255, 107, 107, 0.3); /* Red glow effect */
+  color: #ff6b6b;
+  transform: scale(1.05);
+  text-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
 }
 
 /* Right side layout */
@@ -106,28 +105,30 @@
   box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
 }
 
-/* Language switcher */
+/* Language switcher - IMPROVED VISIBILITY */
 .language-switcher {
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border: 2px solid #333;
+  border: 2px solid #ff6b6b; /* Changed from #333 to red for better visibility */
   border-radius: 20px;
   transition: all 0.3s ease;
   font-size: 0.9rem;
-  color: #333;
+  color: #ff6b6b; /* Changed from #333 to red for better visibility */
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 50px; /* Ensure consistent size */
+  text-align: center;
 }
 
 .language-switcher:hover {
-  background: #333;
+  background: #ff6b6b; /* Red background on hover */
   color: white;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
-/* Hamburger with 3 equal lines - REMOVED WHITE BACKGROUND */
+/* Hamburger with 3 equal lines - IMPROVED VISIBILITY */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -136,30 +137,34 @@
   padding: 0.5rem;
   transition: transform 0.3s ease;
   z-index: 1002;
-  /* REMOVED: background: rgba(255, 255, 255, 0.9); */
-  /* REMOVED: border-radius: 8px; */
-  /* REMOVED: box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  background: rgba(255, 255, 255, 0.9); /* ADDED BACK for visibility */
+  border-radius: 8px; /* ADDED BACK for visibility */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* ADDED BACK for visibility */
+  width: 44px; /* Fixed width for better touch target */
+  height: 44px; /* Fixed height for better touch target */
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger-line {
   width: 25px;
   height: 3px;
-  background: #ff6b6b; /* Changed from #333 to white */
+  background: #333; /* Changed back to dark color for contrast against white background */
   transition: all 0.3s ease;
   transform-origin: center;
 }
 
 .hamburger:hover {
   transform: scale(1.1);
-  /* REMOVED: background: rgba(255, 255, 255, 1); */
+  background: rgba(255, 255, 255, 1); /* ADDED BACK for visibility */
 }
 
 .hamburger:hover .hamburger-line {
-  background: #ff6b6b; /* Change color on hover - red */
-  transform: scale(1.1); /* Slight scale effect on hover */
+  background: #ff6b6b;
+  transform: scale(1.1);
 }
 
-/* Enhanced hamburger hover effect - each line can have individual animation */
+/* Enhanced hamburger hover effect */
 .hamburger:hover .hamburger-line:nth-child(1) {
   transform: translateY(1px);
 }
@@ -172,22 +177,26 @@
   transform: translateY(-1px);
 }
 
-/* Close X button */
+/* Close X button - IMPROVED VISIBILITY */
 .close-x {
-  font-size: 2.5rem; /* Made slightly larger */
-  color: white; /* Changed from #333 to white */
+  font-size: 2.5rem;
+  color: #333; /* Changed back to dark for contrast */
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9); /* Added background for visibility */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .close-x:hover {
-  color: #ff6b6b; /* Change color on hover - red */
+  color: #ff6b6b;
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Full page menu that covers entire screen */
@@ -197,7 +206,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.98); /* Dark background */
+  background: rgba(0, 0, 0, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -316,23 +325,33 @@
 }
 
 .navbar.scrolled .hamburger-line {
-  background: #ff6b6b; /* Ensure lines are visible when scrolled */
+  background: #333; /* Ensure good contrast when scrolled */
 }
 
 .navbar.scrolled .logo {
   color: #ff6b6b;
 }
 
-/* Logo hover effect when scrolled */
 .navbar.scrolled .logo:hover {
-  color: #ff6b6b; /* Same red color on hover when scrolled */
+  color: #ff6b6b;
   transform: scale(1.05);
   text-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
 }
 
 .navbar.scrolled .language-switcher {
   background: rgba(255, 255, 255, 0.95);
-  color: #333;
+  color: #ff6b6b; /* Changed to red for consistency */
+  border-color: #ff6b6b; /* Changed to red for consistency */
+}
+
+.navbar.scrolled .language-switcher:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Hide social icons on mobile - ADDED THIS RULE */
+.social-icons.desktop-only {
+  display: flex;
 }
 
 /* Mobile responsiveness */
@@ -343,6 +362,10 @@
   
   .navbar-right {
     gap: 1rem;
+  }
+  
+  .social-icons.desktop-only {
+    display: none; /* Hide social icons on mobile */
   }
   
   .social-icons a {
@@ -369,32 +392,61 @@
   .language-switcher {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+    min-width: 45px; /* Consistent mobile size */
   }
   
   .hamburger {
     padding: 0.4rem;
+    width: 40px; /* Slightly smaller on mobile */
+    height: 40px;
+  }
+  
+  .hamburger-line {
+    width: 22px; /* Slightly smaller on mobile */
+  }
+  
+  .close-x {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
   }
 }
 
-/* Hide social icons on very small screens */
+/* Extra small screens */
 @media (max-width: 480px) {
   .social-icons {
     display: none;
   }
   
   .navbar-right {
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
   
   .menu-link {
     font-size: 1.7rem;
+  }
+  
+  .language-switcher {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 40px;
+  }
+  
+  .hamburger {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .hamburger-line {
+    width: 20px;
+    height: 2.5px;
   }
 }
 
 /* Add padding to body to account for fixed navbar */
 body {
   margin: 0;
-  padding-top: 80px; /* Adjust based on your navbar height */
+  padding-top: 80px;
 }
 
 /* Ensure content starts below navbar */
