@@ -10,9 +10,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Ensure this is high */
   transition: all 0.3s ease;
   box-shadow: none;
+  /* Add background for better visibility */
+  
 }
 
 .logo {
@@ -325,7 +327,7 @@
 }
 
 .navbar.scrolled .hamburger-line {
-  background: #333; /* Ensure good contrast when scrolled */
+  background: #fff; /* Ensure good contrast when scrolled (dark background) */
 }
 
 .navbar.scrolled .logo {
@@ -443,13 +445,15 @@
   }
 }
 
-/* Add padding to body to account for fixed navbar */
-body {
+/* --- REMOVED CONFLICTING BODY PADDING --- */
+/* body {
   margin: 0;
-  padding-top: 80px;
-}
+  padding-top: 80px; 
+} 
+*/
 
 /* Ensure content starts below navbar */
 .home-page {
+  /* This class will now rely on .page-section for spacing */
   margin-top: 0;
 }

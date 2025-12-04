@@ -1,7 +1,38 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  /* Add this to create space for fixed navbar */
+  padding-top: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Main content should take remaining space */
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Define a full-screen container for individual pages */
+.page-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* Remove padding-top since App now handles it */
+}
+
+/* Ensure Footer stays at bottom */
+.App > footer {
+  margin-top: auto;
+}
+
+/* Rest of your existing App.css code remains... */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,17 +42,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {

@@ -26,6 +26,7 @@ html, body, #root {
   align-items: flex-start;
   color: #fff;
   overflow: hidden;
+   background-attachment: scroll !important; /* Change from fixed */
 }
 
 /* Optional: add overlay for better text visibility */

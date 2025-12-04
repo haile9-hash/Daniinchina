@@ -12,14 +12,22 @@ import './styles/App.css';
 function App() {
   return (
     <Router>
-      <div className="app-container">
+      <div className="App"> {/* Changed from app-container to App */}
         <Navbar />
         <main className="main-content">
           {/* All sections on one page in order */}
-          <Home />
-          <About />
-          <Blog />
-          <Contact />
+          <section className="page-section" id="home">
+            <Home />
+          </section>
+          <section className="page-section" id="about">
+            <About />
+          </section>
+          <section className="page-section" id="blog">
+            <Blog />
+          </section>
+          <section className="page-section" id="contact">
+            <Contact />
+          </section>
         </main>
         <Footer />
       </div>
