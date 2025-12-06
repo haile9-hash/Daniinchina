@@ -78,10 +78,10 @@ export default function Navbar() {
           <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="whatsapp">
+          <a href="https://wa.me/message/X6KLKUUKNBGJE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="whatsapp">
             <i className="fab fa-whatsapp"></i>
           </a>
-          <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="x-twitter">
+          <a href="https://x.com/daninchina1?s=21&t=tLozs0s07UA-iABSCCT34g" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="x-twitter">
             <i className="fab fa-x-twitter"></i>
           </a>
           <a href="https://t.me/Daniy3l" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="telegram">
