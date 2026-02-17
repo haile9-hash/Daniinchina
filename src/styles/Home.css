@@ -1,42 +1,34 @@
-/* 🔧 Reset all browser default spacing */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 🔧 Ensure body & html fill the entire screen */
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 
-/* 🔥 Fullscreen Home Section */
+/* ===== HOME PAGE ===== */
 .home-page {
   width: 100vw;
   height: 100vh;
-  background: url('../assets/D7.jpg') center center / cover no-repeat fixed;
+  background: url("../assets/D7.jpg") center / cover no-repeat;
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   color: #fff;
-  overflow: hidden;
-   background-attachment: scroll !important; /* Change from fixed */
 }
 
-/* Optional: add overlay for better text visibility */
+/* Overlay */
 .home-page::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
@@ -46,43 +38,34 @@ html, body, #root {
   z-index: 2;
 }
 
-/* Hero section covers full height */
+/* ===== HERO ===== */
 .hero {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
-/* Hero content */
 .hero-content {
   max-width: 800px;
-  margin-left: 60px;
-  text-align: left;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Animated typing text */
+/* ===== TYPING TEXT ===== */
 .animated-text-container {
-  margin: 30px 0;
-  min-height: 80px;
-  display: flex;
-  justify-content: flex-start;
+  min-height: 90px;
+  margin-bottom: 30px;
 }
 
 .typing-text {
   font-size: 1.5rem;
-  font-weight: 500;
   line-height: 1.6;
-  max-width: 700px;
-  width: 100%;
-  text-align: left;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .cursor {
-  animation: blink 1s infinite;
+  margin-left: 3px;
   color: #ff6b6b;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
@@ -90,59 +73,75 @@ html, body, #root {
   51%, 100% { opacity: 0; }
 }
 
-/* Button styling */
-.btn-primary {
-  display: inline-block;
-  padding: 15px 35px;
-  border: 2px solid #ff6b6b;
-  border-radius: 30px;
-  background: transparent;
-  color: #ff6b6b;
-  font-size: 1.1rem;
+/* ===== HERO BUTTONS ===== */
+.hero-buttons {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+/* Base Button */
+.btn {
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  letter-spacing: 0.4px;
+}
+
+/* Primary */
+.btn-primary {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.45);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(255, 107, 107, 0.65);
 }
 
-/* ✅ Responsive Fixes */
-@media (max-width: 768px) {
-  .home-page {
-    background-attachment: scroll;
-    height: 100vh;
-  }
+/* Secondary */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
 
+.btn-secondary:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
   .hero-content {
     margin-left: 20px;
-    padding: 0 20px;
+    padding-right: 20px;
   }
 
   .typing-text {
     font-size: 1.2rem;
   }
 
-  .btn-primary {
-    padding: 12px 28px;
-    font-size: 1rem;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btn {
+    width: 220px;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-content {
-    margin-left: 15px;
-    padding: 0 15px;
-  }
-
   .typing-text {
-    font-size: 1rem;
-  }
-
-  .btn-primary {
-    padding: 12px 24px;
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
