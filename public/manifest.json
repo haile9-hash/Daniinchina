@@ -1,21 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "DaniinChina",
+  "name": "DaniinChina",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "D7.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpg"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "D7.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "D7.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
     }
   ],
   "start_url": ".",
