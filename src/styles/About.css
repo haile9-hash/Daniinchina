@@ -1,57 +1,98 @@
+/* About.css – matching Guide page aesthetics */
+
+:root {
+  --primary: #e74c3c;
+  --primary-light: #f5b7b1;
+  --dark: #2c3e50;
+  --text: #4a5568;
+  --text-light: #718096;
+  --bg-light: #f9f9f9;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+/* Page-level container (when standalone) */
 .about-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  margin-top: 80px; /* Space for fixed navbar */
-  min-height: calc(100vh - 80px); /* Full height minus navbar */
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
 }
 
-.about-section {
+/* Section wrapper (when stacked on home) */
+.about-section-wrapper {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Chinese font support */
+.about-page:lang(zh),
+.about-section-wrapper:lang(zh) {
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+/* Grid layout */
+.about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 
-.text-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.intro-text {
-  font-size: 1.3rem;
-  color: #333;
-  line-height: 1.7;
-  font-weight: 500;
-  margin: 0;
-}
-
-.journey-content h2 {
-  color: #333;
-  margin-bottom: 1.2rem;
-  font-size: 1.8rem;
-  border-bottom: 2px solid #e74c3c;
-  padding-bottom: 0.5rem;
+/* Text content */
+.text-content h2 {
+  color: var(--dark);
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
   display: inline-block;
 }
 
-.journey-content p {
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
+.text-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 4px;
 }
 
+.text-content p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Image container */
 .image-container {
   position: relative;
-  border-radius: 15px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  height: 400px; /* Reduced height to fit below navbar */
+  box-shadow: var(--shadow-lg);
+  height: 450px;
+  width: 100%;
+  background: var(--bg-light);
 }
 
 .slideshow-image {
@@ -61,49 +102,45 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Chinese font styling */
-.about-page:lang(zh) {
-  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-}
-
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
   .about-page {
     margin-top: 70px;
     padding: 1.5rem;
     min-height: calc(100vh - 70px);
   }
-  
-  .about-section {
+
+  .about-section-wrapper {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .about-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .image-container {
     height: 300px;
-    order: -1; /* Image comes first on mobile */
-  }
-  
-  .intro-text {
-    font-size: 1.1rem;
+    order: -1; /* image on top for mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .about-page {
+  .about-page,
+  .about-section-wrapper {
     padding: 1rem;
-    margin-top: 60px;
   }
-  
+
+  .about-grid {
+    gap: 2rem;
+  }
+
   .image-container {
     height: 250px;
   }
-  
-  .intro-text {
+
+  .text-content p {
     font-size: 1rem;
-  }
-  
-  .about-section {
-    gap: 2rem;
   }
 }

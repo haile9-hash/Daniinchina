@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Contact.css';
 
-// --- Success Message Component ---
 const SuccessMessage = ({ isVisible, language }) => {
   const successMessages = {
     EN: "Thank you! Your message has been sent.",
@@ -9,7 +8,7 @@ const SuccessMessage = ({ isVisible, language }) => {
   };
 
   return (
-    <div className={`success-message ${isVisible ? '' : 'hidden-message'}`}>
+    <div className={`success-message ${isVisible ? 'show' : ''}`}>
       {successMessages[language]}
     </div>
   );
@@ -26,7 +25,6 @@ function ContactForm() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [language, setLanguage] = useState('EN');
 
-  // Language content
   const content = {
     EN: {
       title: "Contact",
@@ -73,28 +71,16 @@ function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     setTimeout(() => {
-      console.log('Form submission (simulated):', formData);
-
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3000);
-
-      setFormData({
-        name: '',
-        country: '',
-        email: '',
-        message: '',
-      });
+      setFormData({ name: '', country: '', email: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -109,11 +95,8 @@ function ContactForm() {
 
       <div className="form-card">
         <form onSubmit={handleSubmit} className="contact-form">
-
-          <div className="form-group-custom">
-            <label htmlFor="name" className="label-custom">
-              {content[language].nameLabel}
-            </label>
+          <div className="form-group">
+            <label htmlFor="name">{content[language].nameLabel}</label>
             <input
               type="text"
               id="name"
@@ -122,14 +105,11 @@ function ContactForm() {
               onChange={handleChange}
               placeholder={content[language].namePlaceholder}
               required
-              className="input-custom"
             />
           </div>
 
-          <div className="form-group-custom">
-            <label htmlFor="country" className="label-custom">
-              {content[language].countryLabel}
-            </label>
+          <div className="form-group">
+            <label htmlFor="country">{content[language].countryLabel}</label>
             <input
               type="text"
               id="country"
@@ -138,14 +118,11 @@ function ContactForm() {
               onChange={handleChange}
               placeholder={content[language].countryPlaceholder}
               required
-              className="input-custom"
             />
           </div>
 
-          <div className="form-group-custom">
-            <label htmlFor="email" className="label-custom">
-              {content[language].emailLabel}
-            </label>
+          <div className="form-group">
+            <label htmlFor="email">{content[language].emailLabel}</label>
             <input
               type="email"
               id="email"
@@ -154,14 +131,11 @@ function ContactForm() {
               onChange={handleChange}
               placeholder={content[language].emailPlaceholder}
               required
-              className="input-custom"
             />
           </div>
 
-          <div className="form-group-custom">
-            <label htmlFor="message" className="label-custom">
-              {content[language].messageLabel}
-            </label>
+          <div className="form-group">
+            <label htmlFor="message">{content[language].messageLabel}</label>
             <textarea
               id="message"
               name="message"
@@ -170,22 +144,19 @@ function ContactForm() {
               onChange={handleChange}
               placeholder={content[language].messagePlaceholder}
               required
-              className="input-custom resize-none"
-              disabled={isSubmitting}
-            ></textarea>
+            />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="send-button"
+            className="btn-primary submit-btn"
           >
             {isSubmitting ? content[language].sending : content[language].sendButton}
           </button>
         </form>
       </div>
 
-      {/* --- Social Links --- */}
       <div className="social-links">
         <h3>{content[language].socialTitle}</h3>
         <div className="social-icons">
@@ -207,24 +178,28 @@ function ContactForm() {
           >
             <i className="fab fa-instagram"></i>
           </a>
-        <a
-      href="https://web.facebook.com/Daniinchina1?__tn__=-UC"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="social-icon facebook"
-      aria-label="Facebook"
-    >
-      <i className="fab fa-facebook"></i>
-    </a>
+          <a
+            href="https://web.facebook.com/Daniinchina1?__tn__=-UC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon facebook"
+            aria-label="Facebook"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-export default function Contact() {
+export default function Contact({ isSection = false }) {
   return (
-    <div id="contact" className="app-container">
+    <div
+      id="contact"
+      className={isSection ? "contact-section" : "contact-page"}
+      style={isSection ? { scrollMarginTop: '80px' } : {}}
+    >
       <ContactForm />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
@@ -28,8 +28,8 @@ export default function Navbar() {
     window.dispatchEvent(new Event('languageChange'));
   };
 
-  const goTo = (path) => {
-    navigate(path);
+  const goToHome = () => {
+    navigate('/');
     setIsOpen(false);
   };
 
@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       {/* Logo */}
-      <h1 className="logo" onClick={() => goTo('/')} style={{ cursor: 'pointer' }}>
+      <h1 className="logo" onClick={goToHome} style={{ cursor: 'pointer' }}>
         <i>{content[language].logo}</i>
       </h1>
 
@@ -84,11 +84,27 @@ export default function Navbar() {
       {/* Fullscreen Menu */}
       <div className={`fullpage-menu ${isOpen ? 'open' : ''}`}>
         <div className="menu-content">
-          <button onClick={() => goTo('/')} className="menu-link">{content[language].home}</button>
-          <button onClick={() => goTo('/about')} className="menu-link">{content[language].about}</button>
-          <button onClick={() => goTo('/blog')} className="menu-link">{content[language].blogs}</button>
-          <button onClick={() => goTo('/tours')} className="menu-link">{content[language].tours}</button>
-          <button onClick={() => goTo('/contact')} className="menu-link">{content[language].contact}</button>
+          {/* Home – hash link to top of home page */}
+          <Link to="/#home" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].home}
+          </Link>
+          {/* About – hash link */}
+          <Link to="/#about" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].about}
+          </Link>
+            {/* Tours – separate page */}
+          <Link to="/tours" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].tours}
+          </Link>
+          {/* Blogs – hash link */}
+          <Link to="/#blog" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].blogs}
+          </Link>
+          {/* Contact – hash link */}
+          <Link to="/#contact" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].contact}
+          </Link>
+         
         </div>
       </div>
     </nav>
