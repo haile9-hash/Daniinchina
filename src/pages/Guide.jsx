@@ -18,9 +18,6 @@ export default function Guide() {
         "Cultural tips & survival phrases",
         "Business & opportunity insights",
         "How to explore like a local",
-        "Packing tips & what to bring",
-        "Understanding Chinese etiquette",
-        "Getting around: metro, trains & ride-hailing",
       ],
 
       whoTitle: "Who This Guide Is For",
