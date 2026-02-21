@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
@@ -8,7 +8,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Navbar background on scroll
   useEffect(() => {
@@ -46,7 +45,7 @@ export default function Navbar() {
       </h1>
 
       <div className="navbar-right">
-        {/* Social icons - appear before language & hamburger */}
+        {/* Social icons */}
         <div className="social-icons desktop-only">
           <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
             <i className="fab fa-instagram"></i>
@@ -69,9 +68,7 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          {isOpen ? (
-            <span className="close-x">×</span>
-          ) : (
+          {isOpen ? <span className="close-x">×</span> : (
             <>
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
@@ -84,27 +81,11 @@ export default function Navbar() {
       {/* Fullscreen Menu */}
       <div className={`fullpage-menu ${isOpen ? 'open' : ''}`}>
         <div className="menu-content">
-          {/* Home – hash link to top of home page */}
-          <Link to="/#home" className="menu-link" onClick={() => setIsOpen(false)}>
-            {content[language].home}
-          </Link>
-          {/* About – hash link */}
-          <Link to="/#about" className="menu-link" onClick={() => setIsOpen(false)}>
-            {content[language].about}
-          </Link>
-            {/* Tours – separate page */}
-          <Link to="/tours" className="menu-link" onClick={() => setIsOpen(false)}>
-            {content[language].tours}
-          </Link>
-          {/* Blogs – hash link */}
-          <Link to="/#blog" className="menu-link" onClick={() => setIsOpen(false)}>
-            {content[language].blogs}
-          </Link>
-          {/* Contact – hash link */}
-          <Link to="/#contact" className="menu-link" onClick={() => setIsOpen(false)}>
-            {content[language].contact}
-          </Link>
-         
+          <Link to="/#home" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].home}</Link>
+          <Link to="/#about" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].about}</Link>
+          <Link to="/tours" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].tours}</Link>
+          <Link to="/#blog" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].blogs}</Link>
+          <Link to="/#contact" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].contact}</Link>
         </div>
       </div>
     </nav>

@@ -4,7 +4,6 @@ import '../styles/Home.css';
 
 export default function Home() {
   const navigate = useNavigate();
-
   const [language, setLanguage] = useState('EN');
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -55,34 +54,25 @@ export default function Home() {
     }
 
     return () => clearTimeout(timer);
-  }, [textIndex, isDeleting, language]);
+  }, [textIndex, isDeleting, language, textContent]);
 
   return (
     <div className="home-page">
       <section className="hero">
         <div className="hero-content">
-
           <div className="typing-text">
             <strong>{displayText}</strong>
             <span className="cursor">|</span>
           </div>
 
           <div className="hero-buttons">
-            <button
-              className="btn btn-primary"
-              onClick={() => navigate('/blog')}
-            >
+            <button className="btn btn-primary" onClick={() => navigate('/blog')}>
               {language === 'EN' ? 'Watch Now' : '立即观看'}
             </button>
-
-            <button
-              className="btn btn-secondary"
-              onClick={() => navigate('/guide')}
-            >
+            <button className="btn btn-secondary" onClick={() => navigate('/guide')}>
               {language === 'EN' ? 'Get the Guide' : '获取指南'}
             </button>
           </div>
-
         </div>
       </section>
     </div>
