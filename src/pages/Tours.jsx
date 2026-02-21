@@ -1,6 +1,6 @@
 // src/pages/Tours.jsx
 import React, { useState, useEffect } from 'react';
-import { FaCity, FaBriefcase, FaGlobeAsia } from 'react-icons/fa'; // import real icons
+import { FaCity, FaBriefcase, FaGlobeAsia } from 'react-icons/fa'; // fixed imports
 import '../styles/Tours.css';
 
 export default function Tours() {
@@ -23,7 +23,7 @@ export default function Tours() {
           title: "Shanghai Explorer",
           desc: "Discover Shanghai's hidden gems and iconic landmarks.",
           duration: "3 Days",
-          icon: <FaCity />, // real icon component
+          icon: <FaCity />,
         },
         {
           title: "Business Essentials",
