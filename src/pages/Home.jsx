@@ -54,7 +54,7 @@ export default function Home() {
     }
 
     return () => clearTimeout(timer);
-  }, [textIndex, isDeleting, language]);
+  }, [textIndex, isDeleting, language, textContent]); // ✅ textContent added here
 
   return (
     <div className="home-page">
