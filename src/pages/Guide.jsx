@@ -82,18 +82,16 @@ export default function Guide() {
 
   return (
     <div className="guide-page">
-      {/* HERO */}
       <section className="guide-hero">
         <div className="hero-content">
           <h1>{content[language].heroTitle}</h1>
           <p>{content[language].heroText}</p>
-          <a href="#pricing" className="btn-primary">
+          <a href="#pricing" role="button" className="btn-primary">
             {content[language].heroBtn}
           </a>
         </div>
       </section>
 
-      {/* WHAT YOU'LL LEARN */}
       <section className="guide-section">
         <h2>{content[language].learnTitle}</h2>
         <div className="feature-grid">
@@ -103,7 +101,6 @@ export default function Guide() {
         </div>
       </section>
 
-      {/* WHO IT'S FOR */}
       <section className="guide-section light">
         <h2>{content[language].whoTitle}</h2>
         <div className="feature-grid">
@@ -113,33 +110,39 @@ export default function Guide() {
         </div>
       </section>
 
-      {/* PRICING */}
       <section className="guide-section" id="pricing">
         <h2>{content[language].pricingTitle}</h2>
         <div className="pricing-container">
           <div className="pricing-card">
             <h3>{content[language].starter}</h3>
             <p className="price">$29</p>
-            <a href="#pricing" className="btn-secondary">{content[language].buyNow}</a>
+            <a href="#pricing" role="button" className="btn-secondary">
+              {content[language].buyNow}
+            </a>
           </div>
           <div className="pricing-card featured">
             <h3>{content[language].premium}</h3>
             <p className="price">$79</p>
-            <a href="#pricing" className="btn-primary">{content[language].buyNow}</a>
+            <a href="#pricing" role="button" className="btn-primary">
+              {content[language].buyNow}
+            </a>
           </div>
           <div className="pricing-card">
             <h3>{content[language].vip}</h3>
             <p className="price">$199</p>
-            <a href="#pricing" className="btn-secondary">{content[language].buyNow}</a>
+            <a href="#pricing" role="button" className="btn-secondary">
+              {content[language].buyNow}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="guide-cta">
         <h2>{content[language].ctaTitle}</h2>
         <p>{content[language].ctaText}</p>
-        <a href="#pricing" className="btn-primary">{content[language].ctaBtn}</a>
+        <a href="#pricing" role="button" className="btn-primary">
+          {content[language].ctaBtn}
+        </a>
       </section>
     </div>
   );

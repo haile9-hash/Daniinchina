@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
+const textContent = {
+  EN: "I'm Daniel Anteneh (Dani in China), a digital creator, YouTuber, and founder of Dani Import & Export Trading.",
+  中文: "我是丹尼尔·安特内 (丹尼在中国)，数字内容创作者、优兔视频博主，以及丹尼进出口贸易公司创始人。"
+};
+
 export default function Home() {
   const navigate = useNavigate();
   const [language, setLanguage] = useState('EN');
@@ -12,11 +17,6 @@ export default function Home() {
   const typingSpeed = 100;
   const deletingSpeed = 50;
   const pauseTime = 2000;
-
-  const textContent = {
-    EN: "I'm Daniel Anteneh (Dani in China), a digital creator, YouTuber, and founder of Dani Import & Export Trading.",
-    中文: "我是丹尼尔·安特内 (丹尼在中国)，数字内容创作者、优兔视频博主，以及丹尼进出口贸易公司创始人。"
-  };
 
   useEffect(() => {
     const handleLanguageChange = () => {
@@ -54,7 +54,7 @@ export default function Home() {
     }
 
     return () => clearTimeout(timer);
-  }, [textIndex, isDeleting, language, textContent]);
+  }, [textIndex, isDeleting, language]);
 
   return (
     <div className="home-page">
