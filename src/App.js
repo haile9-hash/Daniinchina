@@ -14,6 +14,7 @@ import Tours from './pages/Tours';
 
 import './styles/App.css';
 
+// Scroll to element if URL has a hash
 function ScrollToHash() {
   const location = useLocation();
 
@@ -38,7 +39,7 @@ function App() {
         <ScrollToHash />
         <main className="main-content">
           <Routes>
-            {/* Home page – all four sections stacked */}
+            {/* Home page – all sections stacked */}
             <Route
               path="/"
               element={
@@ -50,8 +51,11 @@ function App() {
                 </>
               }
             />
+            
+            {/* Standalone pages */}
             <Route path="/guide" element={<Guide />} />
             <Route path="/tours" element={<Tours />} />
+            <Route path="/blog" element={<Blog />} /> {/* ✅ Added for "Watch Now" */}
           </Routes>
         </main>
         <Footer />

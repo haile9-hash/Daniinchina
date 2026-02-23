@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
 const textContent = {
@@ -8,7 +7,6 @@ const textContent = {
 };
 
 export default function Home() {
-  const navigate = useNavigate();
   const [language, setLanguage] = useState('EN');
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -18,6 +16,7 @@ export default function Home() {
   const deletingSpeed = 50;
   const pauseTime = 2000;
 
+  // Language handler
   useEffect(() => {
     const handleLanguageChange = () => {
       const lang = localStorage.getItem('currentLanguage') || 'EN';
@@ -29,10 +28,10 @@ export default function Home() {
 
     window.addEventListener('languageChange', handleLanguageChange);
     handleLanguageChange();
-
     return () => window.removeEventListener('languageChange', handleLanguageChange);
   }, []);
 
+  // Typing effect
   useEffect(() => {
     const currentText = textContent[language];
     let timer;
@@ -54,7 +53,15 @@ export default function Home() {
     }
 
     return () => clearTimeout(timer);
-  }, [textIndex, isDeleting, language]); // ✅ FIXED HERE
+  }, [textIndex, isDeleting, language]);
+
+  // Scroll to Blog section
+  const scrollToBlog = () => {
+    const blogSection = document.getElementById('blog');
+    if (blogSection) {
+      blogSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="home-page">
@@ -66,10 +73,10 @@ export default function Home() {
           </div>
 
           <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={() => navigate('/blog')}>
+            <button className="btn btn-primary" onClick={scrollToBlog}>
               {language === 'EN' ? 'Watch Now' : '立即观看'}
             </button>
-            <button className="btn btn-secondary" onClick={() => navigate('/guide')}>
+            <button className="btn btn-secondary" onClick={() => window.location.href = '/guide'}>
               {language === 'EN' ? 'Get the Guide' : '获取指南'}
             </button>
           </div>
