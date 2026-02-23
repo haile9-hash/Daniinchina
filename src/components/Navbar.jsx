@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState('EN');
   const [scrolled, setScrolled] = useState(false);
-
-  const navigate = useNavigate();
 
   // Navbar background on scroll
   useEffect(() => {
@@ -27,11 +25,6 @@ export default function Navbar() {
     window.dispatchEvent(new Event('languageChange'));
   };
 
-  const goToHome = () => {
-    navigate('/');
-    setIsOpen(false);
-  };
-
   const content = {
     EN: { home: 'Home', about: 'About', blogs: 'Blogs', contact: 'Contact', tours: 'Tours', logo: 'DANIINCHINA' },
     中文: { home: '首页', about: '关于我们', blogs: '博客', contact: '联系我们', tours: '旅游', logo: '丹尼在中国' },
@@ -39,12 +32,14 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      
       {/* Logo */}
-      <h1 className="logo" onClick={goToHome} style={{ cursor: 'pointer' }}>
+      <Link to="/" className="logo" style={{ cursor: 'pointer', textDecoration: 'none' }}>
         <i>{content[language].logo}</i>
-      </h1>
+      </Link>
 
       <div className="navbar-right">
+
         {/* Social icons */}
         <div className="social-icons desktop-only">
           <a href="https://www.instagram.com/daninchina?igsh=MW9nanIzNGlkd3FsOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="instagram">
@@ -68,7 +63,9 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          {isOpen ? <span className="close-x">×</span> : (
+          {isOpen ? (
+            <span className="close-x">×</span>
+          ) : (
             <>
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
@@ -81,13 +78,24 @@ export default function Navbar() {
       {/* Fullscreen Menu */}
       <div className={`fullpage-menu ${isOpen ? 'open' : ''}`}>
         <div className="menu-content">
-          <Link to="/#home" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].home}</Link>
-          <Link to="/#about" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].about}</Link>
-          <Link to="/tours" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].tours}</Link>
-          <Link to="/#blog" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].blogs}</Link>
-          <Link to="/#contact" className="menu-link" onClick={() => setIsOpen(false)}>{content[language].contact}</Link>
+          <Link to="/#home" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].home}
+          </Link>
+          <Link to="/#about" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].about}
+          </Link>
+          <Link to="/tours" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].tours}
+          </Link>
+          <Link to="/#blog" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].blogs}
+          </Link>
+          <Link to="/#contact" className="menu-link" onClick={() => setIsOpen(false)}>
+            {content[language].contact}
+          </Link>
         </div>
       </div>
+
     </nav>
   );
 }
