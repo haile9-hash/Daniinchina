@@ -86,7 +86,7 @@ export default function Guide() {
         <div className="hero-content">
           <h1>{content[language].heroTitle}</h1>
           <p>{content[language].heroText}</p>
-          <a href="#pricing" role="button" className="btn-primary">
+          <a href="/guide#pricing" className="btn-primary">
             {content[language].heroBtn}
           </a>
         </div>
@@ -116,21 +116,23 @@ export default function Guide() {
           <div className="pricing-card">
             <h3>{content[language].starter}</h3>
             <p className="price">$29</p>
-            <a href="#pricing" role="button" className="btn-secondary">
+            <a href="/guide#pricing" className="btn-secondary">
               {content[language].buyNow}
             </a>
           </div>
+
           <div className="pricing-card featured">
             <h3>{content[language].premium}</h3>
             <p className="price">$79</p>
-            <a href="#pricing" role="button" className="btn-primary">
+            <a href="/guide#pricing" className="btn-primary">
               {content[language].buyNow}
             </a>
           </div>
+
           <div className="pricing-card">
             <h3>{content[language].vip}</h3>
             <p className="price">$199</p>
-            <a href="#pricing" role="button" className="btn-secondary">
+            <a href="/guide#pricing" className="btn-secondary">
               {content[language].buyNow}
             </a>
           </div>
@@ -140,7 +142,7 @@ export default function Guide() {
       <section className="guide-cta">
         <h2>{content[language].ctaTitle}</h2>
         <p>{content[language].ctaText}</p>
-        <a href="#pricing" role="button" className="btn-primary">
+        <a href="/guide#pricing" className="btn-primary">
           {content[language].ctaBtn}
         </a>
       </section>
